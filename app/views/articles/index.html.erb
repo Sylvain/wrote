@@ -1,0 +1,14 @@
+<br>
+<% @articles.each do |article| %>
+  <article>
+    <h2><%= article.title %></h2>
+    <p><time datetime="<%= article.date %>"><%= I18n.l(article.date, format: :long) %></time></p>
+    <%= strip_tags(article.body).truncate(340) %>
+    <br>
+    <p><%= link_to "Lire la suite &rarr;".html_safe, article_path(article) %></p>
+  </article>
+<% end %>
+
+<br>
+
+<%= will_paginate @articles, page_links: false %>

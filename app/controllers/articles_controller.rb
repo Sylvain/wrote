@@ -4,6 +4,10 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = @user.articles.ordered.paginate(page: params[:page])
+    respond_to do |format|
+      format.html
+      format.rss { render layout: false }
+    end
   end
 
   def show

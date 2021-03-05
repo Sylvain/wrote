@@ -10,11 +10,11 @@ class MessagesMailbox < ApplicationMailbox
   end
 
   private
-  
+
   def attachments
-    @_attachments = mail.attachments.map do |attachment|
+    @attachments ||= mail.attachments.map do |attachment|
       blob = ActiveStorage::Blob.create_after_upload!(
-        io: StringIO.new(attachment.body.to_s),
+        io: StringIO.new(attachment.decoded),
         filename: attachment.filename,
         content_type: attachment.content_type,
       )

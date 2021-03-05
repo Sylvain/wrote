@@ -5,7 +5,7 @@ class MessagesMailbox < ApplicationMailbox
     user.articles.create(
       title: mail.subject,
       body: body,
-      attachments: attachments.map{ |a| a[:blob] }
+      attachments: attachments.reject{|attachment| inline_attachments.include?(attachment)}.map{ |a| a[:blob] }
     )
   end
 
@@ -22,6 +22,10 @@ class MessagesMailbox < ApplicationMailbox
     end
   end
 
+  def inline_attachments
+    @inline_attachments ||= []
+  end
+
   def body
     if mail.multipart? && mail.html_part
       document = Nokogiri::HTML(mail.html_part.body.decoded)
@@ -36,7 +40,7 @@ class MessagesMailbox < ApplicationMailbox
           element = document.at_css "img[src='cid:#{content_id}']"
           if element
             element.replace "<action-text-attachment sgid=\"#{blob.attachable_sgid}\" content-type=\"#{attachment.content_type}\" filename=\"#{attachment.filename}\"></action-text-attachment>"
-            attachments.delete(attachment)
+            inline_attachments << attachment
           end
         end
       end

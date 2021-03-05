@@ -33,8 +33,8 @@ class MessagesMailbox < ApplicationMailbox
         if attachment.content_id.present?
           # Remove the beginning and end < >
           content_id = attachment.content_id[1...-1]
-
-          if element = document.at_css "img[src='cid:#{content_id}']"
+          element = document.at_css "img[src='cid:#{content_id}']"
+          if element
             element.replace "<action-text-attachment sgid=\"#{blob.attachable_sgid}\" content-type=\"#{attachment.content_type}\" filename=\"#{attachment.filename}\"></action-text-attachment>"
             attachments.delete(attachment)
           end

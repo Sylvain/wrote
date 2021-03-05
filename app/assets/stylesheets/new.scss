@@ -94,8 +94,8 @@ html,input,select,button {
 body {
 	/* Center body in page */
 	margin: 0 auto;
-	max-width: 715px;
-	padding: 2rem;
+	max-width: 98rem;
+	padding: 1.6rem 0.6rem;
 	border-radius: 6px;
 	overflow-x: hidden;
 	word-break: break-word;
@@ -104,8 +104,16 @@ body {
 
 	/* Main body text */
 	color: var(--nc-tx-2);
-	font-size: 1.2rem;
+	font-size: 1rem;
 	line-height: 1.5;
+}
+
+@media (min-width: 40em) {
+	body {
+		max-width: 715px;
+		padding: 2rem;
+		font-size: 1.2rem;
+	}
 }
 
 ::selection {

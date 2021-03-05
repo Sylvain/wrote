@@ -1,0 +1,34 @@
+time {
+  color: var(--nc-ac-tx);
+	font-size: 0.85em;
+}
+
+h1 a {
+  font-weight: normal;
+  color: var(--nc-ac-tx);
+	text-decoration: none;
+}
+article {
+	margin-bottom: 2rem;
+}
+
+.previous_page.disabled {
+	display: none;
+}
+.next_page.disabled {
+	display: none;
+}
+
+.next_page, .previous_page {
+  color: var(--nc-ac-tx);
+  border: 1px solid var(--nc-ac-tx);
+  padding: 3px 15px;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+article {
+  border: 1px solid var(--nc-bg-3);
+  padding: 20px;
+  border-radius: 4px;
+}

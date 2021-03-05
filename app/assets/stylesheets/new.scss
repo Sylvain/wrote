@@ -451,24 +451,3 @@ input {
 img {
 	max-width: 100%;
 }
-
-time {
-  color: var(--nc-ac-tx);
-	font-size: 0.85em;
-}
-
-h1 a {
-  font-weight: normal;
-  color: var(--nc-ac-tx);
-	text-decoration: none;
-}
-article {
-	margin-bottom: 2rem;
-}
-
-.previous_page.disabled {
-	display: none;
-}
-.next_page.disabled {
-	display: none;
-}

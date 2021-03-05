@@ -3,10 +3,10 @@ class ArticlesController < ApplicationController
   before_action :load_user
 
   def index
-    @articles = @user.articles.ordered.paginate(page: params[:page])
+    @articles = @user.articles.ordered.paginate(page: params[:page], per_page: 10)
     respond_to do |format|
       format.html
-      format.rss { render layout: false }
+      format.atom
     end
   end
 

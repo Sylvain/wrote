@@ -1,4 +1,8 @@
 <br>
 <h1><%= @article.title %></h1>
 <p><time datetime="<%= @article.date %>"><%= I18n.l(@article.date, format: :long) %></time></p>
-<%= @article.body.html_safe %>
+<%= @article.body %>
+<br>
+<% @article.attachments.each do |attachment| %>
+  <div><%= image_tag attachment %></div>
+<% end %>

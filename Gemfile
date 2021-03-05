@@ -58,6 +58,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails-i18n'
 gem 'friendly_id', '~> 5.4.0'
 gem 'will_paginate', '~> 3.1.0'
+gem 'will-paginate-i18n'
 
 group :production do
   gem 'rails_12factor'

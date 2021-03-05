@@ -3,9 +3,9 @@
   <article>
     <h2><%= article.title %></h2>
     <p><time datetime="<%= article.date %>"><%= I18n.l(article.date, format: :long) %></time></p>
-    <%= strip_tags(article.body).truncate(340) %>
+    <%= article.body.to_plain_text.truncate(340) %>
     <br>
-    <p><%= link_to "Lire la suite &rarr;".html_safe, article_path(article) %></p>
+    <p><%= link_to t('read_more').html_safe, article_path(article), class: 'btn' %></p>
   </article>
 <% end %>
 

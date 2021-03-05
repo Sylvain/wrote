@@ -40,7 +40,7 @@ class MessagesMailbox < ApplicationMailbox
           element = document.at_css "img[src='cid:#{content_id}']"
           if element
             element.replace "<action-text-attachment sgid=\"#{blob.attachable_sgid}\" content-type=\"#{attachment.content_type}\" filename=\"#{attachment.filename}\"></action-text-attachment>"
-            inline_attachments << attachment
+            @inline_attachments << attachment
           end
         end
       end

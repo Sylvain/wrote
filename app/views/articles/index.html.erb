@@ -3,7 +3,7 @@
   <article>
     <h2><%= article.title %></h2>
     <p><time datetime="<%= article.date %>"><%= I18n.l(article.date, format: :long) %></time></p>
-    <%= article.body.to_plain_text.truncate(340) %>
+    <%= article.body.to_plain_text.gsub(/\[*.*\]/, '').truncate(340) %>
     <br>
     <%= link_to t('read_more'), article_path(article), class: 'read-more-link' %>
     <div class="article-more-button">

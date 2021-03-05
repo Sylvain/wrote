@@ -1,6 +1,6 @@
 time {
   color: var(--nc-ac-tx);
-	font-size: 0.85em;
+	font-size: 0.8em;
 }
 
 h1 a {
@@ -16,19 +16,49 @@ h1 a {
 	display: none;
 }
 
-.next_page, .previous_page {
+.next_page, .previous_page, .btn-pill {
   color: var(--nc-ac-tx);
-  border: 1px solid var(--nc-ac-tx);
-  padding: 3px 15px;
+  border: 1px solid var(--nc-ac-border);
+  padding: 4px 15px;
   border-radius: 15px;
   text-decoration: none;
+}
+
+.btn-pill {
+  text-align: center;
+}
+
+.article-more-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 1.5em;
+  z-index: 0;
+
+  span {
+    font-size: 0.85em;
+  }
 }
 
 article {
   border: 1px solid var(--nc-bg-3);
   padding: 1.5em;
+  padding-bottom: 5em;
   border-radius: 4px;
   margin-bottom: 2rem;
+  position: relative;
+}
+
+.read-more-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-indent: -9999px;
+  z-index: 1;
 }
 
 action-text-attachment figcaption {
